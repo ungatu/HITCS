@@ -1,0 +1,4 @@
+gcc -Wall -DRUNTIME -shared -fpic -o mymalloc.so mymalloc.c -ldl
+gcc -o intr int.c
+LD_PRELOAD="./mymalloc.so" ./intr
+LD_PRELOAD="./mymalloc.so" /usr/bin/uptime
